@@ -3,18 +3,6 @@ table.addEventListener('contextmenu', (event) => {
   event.preventDefault();
 });
 
-const observerConfig = { attributes: true };
-
-const observerCallback = (mutationsList, observer) => {
-  for (const mutation of mutationsList) {
-    console.log(mutation);
-  }
-};
-
-const observer = new MutationObserver(observerCallback);
-
-observer.observe(table, observerConfig);
-
 let canvasSize = 64;
 table.style = `width: ${canvasSize * 8}px; height: ${canvasSize * 8}px`;
 
